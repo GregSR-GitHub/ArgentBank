@@ -3,26 +3,13 @@
  * @return { HTMLElement }
  */
 
+import icon_chat from '../../assets/icon-chat.png';
+import icon_money from '../../assets/icon-money.png';
+import icon_security from '../../assets/icon-security.png';
 //  import './home.css';
  
   function Home() {
     return (<div>
-            <nav class="main-nav">
-        <a class="main-nav-logo" href="./index.html">
-            <img
-            class="main-nav-logo-image"
-            src="./img/argentBankLogo.png"
-            alt="Argent Bank Logo"
-            />
-            <h1 class="sr-only">Argent Bank</h1>
-        </a>
-        <div>
-            <a class="main-nav-item" href="./sign-in.html">
-            <i class="fa fa-user-circle"></i>
-            Sign In
-            </a>
-        </div>
-        </nav>
         <main>
         <div class="hero">
             <section class="hero-content">
@@ -36,7 +23,7 @@
         <section class="features">
             <h2 class="sr-only">Features</h2>
             <div class="feature-item">
-            <img src="./img/icon-chat.png" alt="Chat Icon" class="feature-icon" />
+            <img src={icon_chat} alt="Chat Icon" class="feature-icon" />
             <h3 class="feature-item-title">You are our #1 priority</h3>
             <p>
                 Need to talk to a representative? You can get in touch through our
@@ -45,7 +32,7 @@
             </div>
             <div class="feature-item">
             <img
-                src="./img/icon-money.png"
+                src={icon_money}
                 alt="Chat Icon"
                 class="feature-icon"
             />
@@ -56,7 +43,7 @@
             </div>
             <div class="feature-item">
             <img
-                src="./img/icon-security.png"
+                src={icon_security}
                 alt="Chat Icon"
                 class="feature-icon"
             />
@@ -68,9 +55,6 @@
             </div>
         </section>
         </main>
-        <footer class="footer">
-        <p class="footer-text">Copyright 2020 Argent Bank</p>
-        </footer>
     </div>
     );
  }
