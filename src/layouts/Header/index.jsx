@@ -2,21 +2,22 @@
  * Display the upper navbar
  * @return { HTMLElement }
  */
+import { NavLink } from 'react-router-dom'
 import logo from '../../assets/argentBankLogo.png';
 import './header.css';
  
 function Header() {
     return (
-            <nav class="main-nav">
-        <a class="main-nav-logo" href="./index.html">
-            <img class="main-nav-logo-image" src={logo} alt="Argent Bank Logo"/>
-            <h1 class="sr-only">Argent Bank</h1>
-        </a>
+            <nav className="main-nav">
+                <NavLink to="/" className="main-nav-logo"  end>
+                    <img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo"/>
+                    <h1 className="sr-only">Argent Bank</h1>
+                </NavLink>
         <div>
-            <a class="main-nav-item" href="./sign-in.html">
-                <i class="fa fa-user-circle"></i>
+             <NavLink to="/sign-in" className="main-nav-item">
+                <i className="fa fa-user-circle"></i>
                 Sign In
-            </a>
+            </NavLink>
         </div>
         </nav>
     );
