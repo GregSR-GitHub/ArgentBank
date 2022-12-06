@@ -1,5 +1,5 @@
 import Home from '../pages/Home';
-import Login from '../pages/Login';
+import SignIn from '../pages/SignIn';
 import User from '../pages/User';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
@@ -13,7 +13,7 @@ function App() {
         <Header />
         <Routes>
             <Route exact path="/"  element={<Home />} /> 
-            <Route path="/sign-in"  element={<Login />} /> 
+            <Route path="/sign-in"  element={<SignIn />} /> 
             <Route path="/user"  element={<User />} /> 
           </Routes>
         <Footer />

@@ -37,7 +37,7 @@
     text-align: left;
     margin-bottom: 1rem;
   }
-  
+
   .input-wrapper label {
     font-weight: bold;
   }
@@ -47,3 +47,8 @@
     font-size: 1.2rem;
   }
   
+  .input-wrapper input ~ span{
+    text-align: right;
+    color: red;
+    font-size: 12px;
+  }
