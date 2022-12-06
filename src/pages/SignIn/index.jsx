@@ -7,15 +7,18 @@
 //  import useLogin from '../../utils/login.js';
  import { Api } from '../../utils/api.js';
  import { useState } from 'react'
- import { Link } from 'react-router-dom'
+ import { Link, Navigate } from 'react-router-dom'
+ import { useSelector, useDispatch } from "react-redux";
+ import { newToken } from "../../store/store.js";
   
    function SignIn() {
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const loginInfos = {email: userName, password: password };
-    const [token, setToken] = useState("");
     const [loginError, setLoginError] = useState(false)
-    
+    const dispatch = useDispatch();
+    const myToken = useSelector((state) => state.token);
+
     // console.log(token);
 
     async function useHandleSubmit(e) {   
@@ -24,8 +27,8 @@
       console.log(loginInfos)
       const loginData =  await Api('http://localhost:3001/api/v1/user/login', loginInfos);
       if(loginData.status === 200){
-        setToken(loginData.body.token);
-        console.log(loginData.body.token)
+        dispatch(newToken(loginData.body.token));
+        console.log(myToken)
         setLoginError(false);
       }else{
         setLoginError(true);
@@ -38,6 +41,7 @@
      <section className="sign-in-content">
        <i className="fa fa-user-circle sign-in-icon"></i>
        <h1>Sign In</h1>
+       {myToken && <Navigate replace to="/user" />}
        <form onSubmit={useHandleSubmit}>
          <div className="input-wrapper">
            <label htmlFor="username">Username</label>
