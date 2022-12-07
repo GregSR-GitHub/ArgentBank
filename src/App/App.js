@@ -1,6 +1,6 @@
 import Home from '../pages/Home';
-import SignIn from '../pages/SignIn';
-import User from '../pages/User';
+import Login from '../pages/Login';
+import Profile from '../pages/User';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
 import './App.css';
@@ -13,8 +13,8 @@ function App() {
         <Header />
         <Routes>
             <Route exact path="/"  element={<Home />} /> 
-            <Route path="/sign-in"  element={<SignIn />} /> 
-            <Route path="/user"  element={<User />} /> 
+            <Route path="/login"  element={<Login />} /> 
+            <Route path="/profile"  element={<Profile />} /> 
           </Routes>
         <Footer />
       </Router>

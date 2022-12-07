@@ -3,17 +3,20 @@
  * @return { HTMLElement }
  */
 import { NavLink } from 'react-router-dom'
+// import { Api } from '../../utils/api.js';
 import { useSelector, useDispatch } from "react-redux";
-import { newToken } from "../../store/store.js";
+import { getProfile,} from "../../store/store.js";
 import logo from '../../assets/argentBankLogo.png';
 import './header.css';
  
 function Header() {
-    const myToken = useSelector((state) => state.token);
+    const myProfile = useSelector((state) => state.profile);
     const dispatch = useDispatch();
 
-    if(myToken){
-        console.log(myToken)
+    if(myProfile){
+        console.log(myProfile)
+        // const profileData =  Api('http://localhost:3001/api/v1/user/profile', { token: myToken});
+        // console.log(profileData)
     }
     return (
             <nav className="main-nav">
@@ -22,17 +25,17 @@ function Header() {
                     <h1 className="sr-only">Argent Bank</h1>
                 </NavLink>
         <div>
-            {myToken&&<NavLink to="/user" className="main-nav-item" end>
+            {myProfile&&<NavLink to="/profile" className="main-nav-item" end>
                 <i className="fa fa-user-circle"></i>
-                Tony
+                {myProfile.firstName}
             </NavLink>}
-             {myToken?(
+             {myProfile?(
                 // 
-             <NavLink to="#" className="main-nav-item" onClick={() => {dispatch(newToken(""))}}>
+             <NavLink to="#" className="main-nav-item" onClick={() => {dispatch(getProfile(""))}}>
                 <i className="fa fa-sign-out"></i>
                 Sign Out
             </NavLink>):
-            (<NavLink to="/sign-in" className="main-nav-item">
+            (<NavLink to="/login" className="main-nav-item">
                 <i className="fa fa-user-circle"></i>
                 Sign In
             </NavLink>)}

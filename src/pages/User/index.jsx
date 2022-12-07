@@ -8,15 +8,15 @@
  import { Navigate } from 'react-router-dom'
   
    function User() {
-    const myToken = useSelector((state) => state.token);
-    if(myToken){
-        console.log(myToken)
+    const profile = useSelector((state) => state.profile);
+    if(profile){
+        console.log(profile)
     }
      return (
         <main className="main bg-dark">
         <div className="header">
-          <h1>Welcome back<br />Tony Jarvis!</h1>
-          {!myToken && <Navigate replace to="/" />}
+          <h1>Welcome back<br />{profile.firstName} {profile.lastName}!</h1>
+          {!profile && <Navigate replace to="/" />}
           <button className="edit-button">Edit Name</button>
         </div>
         <h2 className="sr-only">Accounts</h2>

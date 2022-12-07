@@ -44,18 +44,8 @@
  
 //  }
  
- export async function Api(url, body) {
+ export async function Api(url, requestOptions) {
     console.log("Url:" + url)
-    console.log(body)
-    const requestOptions = {
-                        method: 'POST',
-                        headers: {
-                          'Accept': 'application/json',
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(body)
-                      };
-    
      if (!url) return
      async function fetchData() { 
              const response = await fetch(url, requestOptions) 
