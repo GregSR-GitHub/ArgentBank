@@ -8,7 +8,7 @@
  import { useState } from 'react'
  import { Navigate } from 'react-router-dom'
  import { useSelector, useDispatch } from "react-redux";
- import { getProfile } from "../../store/store.js";
+ import { getProfile, newToken } from "../../store/store.js";
   
    function Login() {
     const [userName, setUserName] = useState("")
@@ -20,11 +20,13 @@
 
     async function useHandleSubmit(e) {   
       e.preventDefault();
-      const profileData = await login(loginInfos);
-      if(profileData&&(profileData.status === 200)){
-            console.log(profileData)
+      const Datas = await login(loginInfos);
+      if(Datas.profileData&&(Datas.profileData.status === 200)){
+            console.log(Datas.profileData)
             setLoginError(false);
-            dispatch(getProfile(profileData.body));
+            dispatch(getProfile(Datas.profileData.body));
+            dispatch(newToken(Datas.token));
+            
           }else{
             setLoginError(true);
           }

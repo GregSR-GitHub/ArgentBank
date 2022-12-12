@@ -26,18 +26,15 @@ function Header() {
                 </NavLink>
         <div>
             {myProfile&&<NavLink to="/profile" className="main-nav-item" end>
-                <i className="fa fa-user-circle"></i>
-                {myProfile.firstName}
+                <i className="fa fa-user-circle"></i> {myProfile.firstName}
             </NavLink>}
              {myProfile?(
                 // 
              <NavLink to="#" className="main-nav-item" onClick={() => {dispatch(getProfile(""))}}>
-                <i className="fa fa-sign-out"></i>
-                Sign Out
+                <i className="fa fa-sign-out"></i> Sign Out
             </NavLink>):
             (<NavLink to="/login" className="main-nav-item">
-                <i className="fa fa-user-circle"></i>
-                Sign In
+                <i className="fa fa-user-circle"></i> Sign In
             </NavLink>)}
         </div>
         </nav>

@@ -27,7 +27,7 @@
       }
       const profileData =  await Api('http://localhost:3001/api/v1/user/profile', requestOptionProfile);
       if(profileData.status === 200){
-        return profileData
+        return {profileData: profileData, token: loginData.body.token}
       }
     }
   }
