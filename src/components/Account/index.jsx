@@ -1,5 +1,7 @@
 /**
- * Display the profil page
+ * Display accounts's information
+ * @param { String } title
+ * @param { String } amount
  * @return { HTMLElement }
  */
 

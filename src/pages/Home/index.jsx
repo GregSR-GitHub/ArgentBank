@@ -1,5 +1,5 @@
 /**
- * Display the profil page
+ * Display the home page
  * @return { HTMLElement }
  */
 

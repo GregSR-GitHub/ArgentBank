@@ -1,5 +1,5 @@
 /**
- * Display the profil page
+ * Display the form for editing user names
  * @return { HTMLElement }
  */
 

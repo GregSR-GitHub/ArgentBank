@@ -1,0 +1,37 @@
+    .edit-button {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .editing-buttons {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 15px;
+    margin: 2px 10px;
+    width: 100px;
+  }
+
+  .edit-input-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .edit-button-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .edit-input-wrapper input {
+    padding: 5px;
+    font-size: 1.2rem;
+    margin: 5px 10px;
+  }

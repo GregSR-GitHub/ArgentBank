@@ -5,7 +5,7 @@
 import { NavLink } from 'react-router-dom'
 // import { Api } from '../../utils/api.js';
 import { useSelector, useDispatch } from "react-redux";
-import { getProfile,} from "../../store/store.js";
+import { userLogout} from "../../store/store.js";
 import logo from '../../assets/argentBankLogo.png';
 import './header.css';
  
@@ -15,8 +15,6 @@ function Header() {
 
     if(myProfile){
         console.log(myProfile)
-        // const profileData =  Api('http://localhost:3001/api/v1/user/profile', { token: myToken});
-        // console.log(profileData)
     }
     return (
             <nav className="main-nav">
@@ -30,7 +28,7 @@ function Header() {
             </NavLink>}
              {myProfile?(
                 // 
-             <NavLink to="#" className="main-nav-item" onClick={() => {dispatch(getProfile(""))}}>
+             <NavLink to="#" className="main-nav-item" onClick={() => {dispatch(userLogout())}}>
                 <i className="fa fa-sign-out"></i> Sign Out
             </NavLink>):
             (<NavLink to="/login" className="main-nav-item">

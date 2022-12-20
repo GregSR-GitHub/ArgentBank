@@ -1,5 +1,5 @@
 /**
- * Display the upper navbar
+ * Display the footer
  * @return { HTMLElement }
  */
  import './footer.css';

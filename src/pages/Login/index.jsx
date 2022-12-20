@@ -1,5 +1,5 @@
 /**
- * Display the profil page
+ * Display the login page
  * @return { HTMLElement }
  */
 
@@ -21,15 +21,13 @@
     async function useHandleSubmit(e) {   
       e.preventDefault();
       const Datas = await login(loginInfos);
+      setLoginError(true);
       if(Datas.profileData&&(Datas.profileData.status === 200)){
             console.log(Datas.profileData)
             setLoginError(false);
             dispatch(getProfile(Datas.profileData.body));
             dispatch(newToken(Datas.token));
-            
-          }else{
-            setLoginError(true);
-          }
+        }
       }
 
      return (
@@ -41,12 +39,12 @@
        <form onSubmit={useHandleSubmit}>
          <div className="input-wrapper">
            <label htmlFor="username">Username</label>
-           <input type="email" id="username" placeholder='user@email.com'  minLength="3" required onChange={(e) => setUserName(e.target.value)}/>
+           <input type="email" id="username" placeholder='user@email.com'  minLength="5" required onChange={(e) => setUserName(e.target.value)}/>
            <span></span>
          </div>
          <div className="input-wrapper">
            <label htmlFor="password">Password</label>
-           <input type="password" id="password" placeholder='**********'  minLength="6"  required onChange={(e) => setPassword(e.target.value)}/>
+           <input type="password" id="password" placeholder='**********'  minLength="3"  required onChange={(e) => setPassword(e.target.value)}/>
            {loginError&&<span>Mot de passe ou identifiant incorect</span>}
          </div>
          <div className="input-remember">

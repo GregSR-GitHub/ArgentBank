@@ -1,5 +1,8 @@
 /**
- * Display the profil page
+ * Display the feature item
+ * @param { String } title
+ * @param { String } icon
+ * @param { String } text
  * @return { HTMLElement }
  */
 

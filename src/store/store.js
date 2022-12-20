@@ -19,11 +19,12 @@ export const getProfile = (profile) => ({
     payload: { profile: profile },
 });
 
+export const userLogout = () => ({ type: "logout" });
+
 // Reducer 
 function reducer(state, action) {
 
     if (action.type === "newToken") {
-        // ... il faut inverser la propriété playing du state
         const newToken = action.payload.token;
         return {
             ...state,
@@ -31,12 +32,15 @@ function reducer(state, action) {
         };
     }
     if (action.type === "getProfile") {
-        // ... il faut inverser la propriété playing du state
+        
         const newProfile = action.payload.profile;
         return {
             ...state,
             profile: newProfile
         };
+    }
+    if (action.type === "logout") {
+        return initialState;
     }
     return state;
 }

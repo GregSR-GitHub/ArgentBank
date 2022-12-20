@@ -1,5 +1,7 @@
 /**
- * Fetech profil data from Api after signing in
+ * Change profil data with the Api
+ * @param { Object } userName
+ * @param { String } token
  * @return { Object }
  */
  import { Api } from './api.js';

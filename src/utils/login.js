@@ -1,7 +1,9 @@
 /**
- * Fetech profil data from Api after signing in
- * @return { Object }
+ * Fetch profil data from Api after signing in
+ * @param { Object } loginInfos
+ * @return { Object.< profileDatas: Object, token: String> }
  */
+
  import { Api } from './api.js';
 
    async function login(loginInfos) { 
