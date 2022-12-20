@@ -1,7 +1,7 @@
 /**
  * Fetch data from the Api
  * @param { String } url
- * @param { String } requestOptions
+ * @param { Object } requestOptions
  * @return { Object }
  */
 

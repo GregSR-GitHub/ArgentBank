@@ -7,8 +7,6 @@
  import { Api } from './api.js';
 
    async function login(loginInfos) { 
-    console.log('Le lien a été cliqué.'); 
-    console.log(loginInfos)
     const requestOptionLogin = {
       method: 'POST',
       headers: {
